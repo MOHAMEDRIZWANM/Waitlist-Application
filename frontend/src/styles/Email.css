@@ -1,0 +1,89 @@
+/* Root variables for color palette */
+:root {
+  --primary-color: #4a90e2; /* Soft Blue */
+  --secondary-color: #50e3c2; /* Mint Green */
+  --background-color: #f5f7fa; /* Light Gray */
+  --text-color: #4a4a4a; /* Dark Gray */
+  --border-radius: 10px;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.head {
+  color: aliceblue;
+}
+
+.whole_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 100vh;
+}
+
+/* Email container styles */
+.Email-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 300px;
+  padding: 30px;
+  background-color: rgb(33, 37, 41); /* Use a more explicit color instead of 'white' */
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Form element styles */
+.Email-container input,
+.Email-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.mail{
+  /* border: 2px solid red; */
+  width: 270px;
+}
+/* form{
+  border: 2px solid red;
+  width: 500px;
+} */
+
+.Email-container button {
+  background-color: var(--primary-color);
+  color: #fff; /* Use a more explicit color instead of 'white' */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Email-container button:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn {
+  width: 100px !important;
+  /* border: 1px solid red; */
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .Email-container {
+    width: 80%;
+  }
+}

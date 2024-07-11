@@ -1,0 +1,61 @@
+/* Coupan.css */
+
+:root {
+    --primary-color: #4a90e2; /* Soft Blue */
+    --secondary-color: #50e3c2; /* Mint Green */
+    --background-color: #f5f7fa; /* Light Gray */
+    --text-color: #4a4a4a; /* Dark Gray */
+    --border-radius: 10px;
+  }
+  
+  .winner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    position: relative;
+  }
+  
+  .winner-card {
+    background-color: rgb(33, 37, 41); /* Dark background similar to SignUp form */
+    color: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .congrats {
+    font-size: 2rem;
+    color: var(--secondary-color);
+  }
+  
+  .winner-image {
+    width: 150px;
+    height: 150px;
+    margin: 20px 0;
+  }
+  
+  .winner-name {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .winner-text {
+    font-size: 1.2rem;
+    color: Alice blue;
+  }
+  
+  canvas#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  

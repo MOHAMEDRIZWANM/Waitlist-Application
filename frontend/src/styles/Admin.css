@@ -1,0 +1,122 @@
+/* Root variables for color palette */
+:root {
+    --primary-color: #4a90e2; /* Soft Blue */
+    --secondary-color: #50e3c2; /* Mint Green */
+    --background-color: #f5f7fa; /* Light Gray */
+    --text-color: #4a4a4a; /* Dark Gray */
+    --border-radius: 10px;
+  }
+  .whole_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+    height: 100vh;
+  }
+  /* Global styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  .head{
+    color: aliceblue;
+  }
+  
+  /* Login container styles */
+  .login-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+    gap: 2rem;
+  }
+  a{
+    text-decoration: none;
+    color: aliceblue;
+  }
+  .whole_btn{
+    display: flex;
+    /* border: 1px solid red; */
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  
+  
+  }
+  /* Login form styles */
+  .login-form {
+    flex: 1;
+    padding: 40px;
+    background-color: rgb(33, 37, 41); /* Use a more explicit color instead of 'white' */
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Login image styles */
+  .forgot{
+    font-size: 14px;
+  }
+  .im{
+    height: 500px;
+    width: 500px;
+  }
+  .login-image {
+    flex: 1;
+    /* border :solid black 2px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-image img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form element styles */
+  .login-form input,
+  .login-form button {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+  }
+  
+  .login-form button {
+    background-color: var(--primary-color);
+    color: #fff; /* Use a more explicit color instead of 'white' */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-form button:hover {
+    background-color: var(--secondary-color);
+  }
+  .btn{
+    width: 100px !important;
+    /* border: 1px solid red; */
+  }
+  
+  /* Media query for responsive design */
+  @media (max-width: 768px) {
+    .login-container {
+      flex-direction: column;
+    }
+  
+    .login-form {
+      margin-bottom: 20px;
+    }
+  }

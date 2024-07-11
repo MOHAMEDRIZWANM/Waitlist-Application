@@ -1,0 +1,99 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+}
+
+.profile-header {
+  margin-bottom: 20px;
+}
+
+.profile-icon {
+  width: 130px;
+  height: 105px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details {
+  background-color: rgb(33, 37, 41);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 500px; /* Increased width */
+}
+
+.profile-details label {
+  font-weight: bold;
+  color: aliceblue;
+  align-self: flex-start;
+}
+
+.profile-details input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.profile-details input:disabled {
+  background-color: #f0f0f0;
+  color: #888;
+}
+
+.referral-url-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%; /* Ensures the container takes full width */
+}
+
+.copy-button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.copy-success {
+  margin-left: 10px;
+  color: #50e3c2;
+}
+
+.back-button {
+  width: 100px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .profile-details {
+    width: 90%;
+  }
+}

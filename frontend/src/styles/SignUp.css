@@ -1,0 +1,174 @@
+/* Root variables for color palette */
+:root {
+  --primary-color: #4a90e2; /* Soft Blue */
+  --secondary-color: #50e3c2; /* Mint Green */
+  --background-color: #f5f7fa; /* Light Gray */
+  --text-color: #4a4a4a; /* Dark Gray */
+  --border-radius: 10px;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.head {
+  color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* SignUp container styles */
+.signup-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  gap: 2rem;
+}
+
+/* SignUp form styles */
+.signup-form {
+  flex: 1;
+  padding: 40px;
+  background-color: rgb(33, 37, 41); /* Dark background similar to Login form */
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.whole_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+/* Button group styles */
+.button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 75px; /* Space between the buttons */
+}
+
+/* SignUp image styles */
+.signup-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-image img {
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.im {
+  height: 500px;
+  width: 500px;
+}
+
+/* Form element styles */
+.signup-form input,
+.signup-form .signup-btn,
+.signup-form .back-btn {
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.signup-form .signup-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 130px;
+}
+
+.signup-form .signup-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.signup-form .back-btn {
+  background-color: #4a90e2; /* White background */
+  color: white; /* Primary color text */
+  font-size: 16px; /* Medium size font */
+  width: 130px;
+}
+
+.signup-form .back-btn:hover {
+  background-color: #50e3c2; /* Light gray background on hover */
+}
+
+.btn {
+  width: 100px !important;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-form {
+    margin-bottom: 20px;
+  }
+}
+
+/* Loader styles */
+.signup-loader-wrapper {
+  width: 150px;
+  height: 150px;
+}
+
+.signup-loader {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #162634;
+  border-top-color: #4bc8eb;
+  border-bottom-color: #f13a8f;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+}
+
+.signup-loader-inner {
+  border-top-color: #36f372;
+  border-bottom-color: #fff;
+  animation-duration: 2.5s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(360deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(-360deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}

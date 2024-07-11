@@ -1,0 +1,93 @@
+.detail-container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.features {
+    flex: 1;
+    max-width: 45%;
+    color: #212529;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.features p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.features ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.features ul li::before {
+    content: '✔';
+    color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.visuals {
+    flex: 1;
+    max-width: 45%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.iphone-image {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    transition: transform 0.5s ease, filter 0.5s ease;
+
+}
+.iphone-image:hover{
+    transform: scale(1.125);
+    filter: drop-shadow(1px 1px 20px #495057);
+}
+
+
+@keyframes moveBorder {
+    0% {
+        border-radius: 67% 33% 45% 55% / 39% 30% 70% 61%;
+    }
+    100% {
+        border-radius: 33% 67% 55% 45% / 30% 39% 61% 70%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .detail-container {
+      flex-direction: column;
+    }
+    .features {
+      max-width: 100%;
+    }
+    .visuals {
+      max-width: 100%;
+      margin-top: 2rem;
+    }
+    .iphone-image {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+  }
