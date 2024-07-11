@@ -32,6 +32,7 @@ function Login() {
         setError(response.data);
       } else if (response.data === 'Account not found!') {
         setError(response.data);
+        toast.error(error)
         navigate('/signup', { replace: true });
       } else {
         setSuccess(response.data);

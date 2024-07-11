@@ -33,7 +33,7 @@ const WaitingList = () => {
   const handleCouponButtonClick = () => {
     if (winnerDetails && winnerDetails.winner) {
       const { name, couponCode } = winnerDetails;
-      navigate('/coupon', { state: { name, couponCode } });
+      navigate('/coupon', { state: { name, couponCode }, replace: true });
     }
   }
 
