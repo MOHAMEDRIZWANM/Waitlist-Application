@@ -157,6 +157,25 @@ This command will populate the necessary admin credentials (your admin username 
 
 ## Sample Images
 
+### User Interface
+
+![Sign Up](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/sign%20up.png)
+
+![Login](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/login.png)
+
+![Loading](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/loading.png)
+
+![OTP](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/OTP.png)
+
+![Waiting List](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/Waiting%20list.png)
+
+![Winner Page](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/Winner%20page.png)
+
+### Admin Interface
+
+![Admin Login](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/Admin%20login.png)
+
+![Admin Access](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/Admin%20access.png)
 
 ## License
 
