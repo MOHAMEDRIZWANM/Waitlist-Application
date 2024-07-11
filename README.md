@@ -155,6 +155,10 @@ This command will populate the necessary admin credentials (your admin username 
   - Manage users, verify them, and update their status.
   - The waitlist table is divided into verified and unverified users, with specific columns and action buttons for each category.
 
+## Schema
+
+![Schema](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/Schema.png)
+
 ## Sample Images
 
 ### User Interface
@@ -162,6 +166,8 @@ This command will populate the necessary admin credentials (your admin username 
 ![Sign Up](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/sign%20up.png)
 
 ![Login](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/login.png)
+
+![Home Page](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/Home.png)
 
 ![Loading](https://github.com/MOHAMEDRIZWANM/Waitlist-Application/blob/main/readme_assets/loading.png)
 
