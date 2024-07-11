@@ -155,6 +155,9 @@ This command will populate the necessary admin credentials (your admin username 
   - Manage users, verify them, and update their status.
   - The waitlist table is divided into verified and unverified users, with specific columns and action buttons for each category.
 
+## Sample Images
+
+
 ## License
 
 This project is licensed under the MIT License.
