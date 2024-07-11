@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const { admin } = require('./models/adminuser'); 
 
 const seedAdmin = async () => {
-    const email = "mohamedrizwanm.21aid@kongu.edu";
-    const password = "rizwan";
+    const email = "your admin username";
+    const password = "your admin password";
     const existingAdmin = await admin.findOne({ username: email });
     if (existingAdmin) {
         console.log('Admin already exists');
