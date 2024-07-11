@@ -9,7 +9,7 @@ dotenv.config({
 })
 
 module.exports.signup = async (req, res) => {
-    try {
+    try { //function for the signup and calls the send OTP function for user verification
         const exist = await user.findOne({email: req.body.email})
         if(exist) {
             return res.send('Account User Already exists')
@@ -34,7 +34,7 @@ module.exports.signup = async (req, res) => {
 }
 
 module.exports.signin = async(req, res) => {
-    try {
+    try { //function autheciates user with the password and creates json web token with 1 day validity
         const { email, password } = req.body;
         const account = await user.findOne({ email })
         if(!account) {

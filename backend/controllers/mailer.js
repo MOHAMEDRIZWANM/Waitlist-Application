@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 dotenv.config({
     path: '../.env'
 })
-
+//function for sending mail
 module.exports.mailer = async(email, sub, txt, htm) => {
     var transport = nodemailer.createTransport({
         host: "smtp.gmail.com", //mail host server

@@ -5,7 +5,7 @@ dotenv.config({
     path: "../.env"
 })
 
-module.exports.isAdminAuth = async(req, res, next) => {
+module.exports.isAdminAuth = async(req, res, next) => { //admin authenciation for accessing the data with jwt token
     const token = req.cookies.token 
     if (!token) {
         return res.status(401).send('Access Denied')

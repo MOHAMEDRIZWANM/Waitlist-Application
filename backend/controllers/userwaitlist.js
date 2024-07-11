@@ -2,7 +2,7 @@ const { user } = require('../models/user');
 const { waitlist } = require('../models/waitlist');
 
 module.exports.getLeaderboard = async (req, res) => {
-    try {
+    try { //gets the current leaderboard from the waitlist collection
         const waitlistDoc = await waitlist.findOne({}).populate('users.user', 'name');
         if (!waitlistDoc) {
             return res.status(404).send('Waitlist not found');
@@ -23,7 +23,7 @@ module.exports.getLeaderboard = async (req, res) => {
 };
 
 module.exports.getwinner = async (req, res) => {
-    try {
+    try { //function fetches the winner of the contest
         const userDoc = await user.findOne({ email: req.user.email });
         if (!userDoc) {
             return res.status(404).send('Error fetching details');

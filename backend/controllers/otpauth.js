@@ -10,7 +10,7 @@ function genReferralCode() {
 }
 
 module.exports.verifyOTP = async (req, res) => {
-    try {
+    try { //verifying the OTP for adding the user to the waitlist
         const { otp: inputOtp } = req.body;
         const { email } = req.cookies;
         const otpRecord = await otp.findOne({ email, otp: inputOtp });
@@ -72,7 +72,7 @@ module.exports.verifyOTP = async (req, res) => {
 };
 
 module.exports.resendOtp = async(req,res) => {
-    try {
+    try { //resending the OTP incase of OTP expiry 
         const {email} = req.cookies
         await send.sendOTP(email)
         res.send('Resend OTP successfull') 

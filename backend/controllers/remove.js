@@ -2,7 +2,7 @@ const {otp} = require('../models/otp')
 const {user} = require('../models/user')
 
 module.exports.otprem = async() => {
-    try {
+    try { //function removes the expired OTP after 5 minutes
         const result = await otp.deleteMany({
             expireAt: {
                 $lt: new Date()
@@ -17,7 +17,7 @@ module.exports.otprem = async() => {
 }
 
 module.exports.userrem = async() => {
-    try {
+    try { //functions removes the unverified users after one day
         const thresholdDate = new Date(Date.now() - 24 * 60 * 60 * 1000); 
         const result = await user.deleteMany({ verified: false, createdAt: { $lt: thresholdDate } })
         if (result.deletedCount > 0) {

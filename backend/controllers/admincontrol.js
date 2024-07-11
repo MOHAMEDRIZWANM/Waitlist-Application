@@ -9,14 +9,14 @@ function genReferralCode() {
 
 module.exports.getallusers = async (req, res) => {
     try {
-        const users = await user.find().select('-password -createdAt -joinWaitlist');
+        const users = await user.find().select('-password -createdAt -joinWaitlist'); //fetching the user details other than password, createdat and joinwaitlist
 
         if (!users) {
             return res.status(404).send('No users found');
         }
 
         const waitlistDoc = await waitlist.findOne({}).populate('users.user');
-
+        //fetching the positions of the verified users
         const verifiedUsersWithPosition = users
             .filter(userDoc => userDoc.verified)
             .map(userDoc => {
@@ -32,7 +32,7 @@ module.exports.getallusers = async (req, res) => {
                     position: userPosition
                 };
             });
-
+        //fetching the unverified users
         const unverifiedUsers = users.filter(userDoc => !userDoc.verified);
 
         res.status(200).send({
@@ -50,6 +50,7 @@ module.exports.verifyUser = async (req, res) => {
     try {
         const {email} = req.body
         const userRecord = await user.findOne({ email });
+        //verifying the users based on the email and assigning the position and referral code.
         if (userRecord) {
             userRecord.verified = true;
             const newPosition = await waitlist.assignPosition(userRecord._id)
@@ -65,6 +66,7 @@ module.exports.verifyUser = async (req, res) => {
                 await mailer(email, sub, txt, htm)
                 console.log(`Referral Code sent to ${email}: ${referralc}`);
             } else {
+                //if contest is completed we send completed message
                 console.log('Contest Completed')
                 userRecord.joinWaitlist = false
                 const sub = 'Contest Completed'
@@ -73,6 +75,7 @@ module.exports.verifyUser = async (req, res) => {
                 await mailer(email, sub, txt, htm)
             }
             if (userRecord.referredBy) {
+                //updating the position according to the refferal used by new members
                 const referrer = await user.findOne({ referralCode: userRecord.referredBy });
                 if (referrer) {
                     const temp = await waitlist.updatePositions(referrer._id);
@@ -101,7 +104,7 @@ module.exports.verifyUser = async (req, res) => {
 // Update user details
 module.exports.updateUser = async (req, res) => {
     try {
-        const { email, userDetails } = req.body;
+        const { email, userDetails } = req.body;//username and email can be updated by admin
         const allowedUpdates = ['name', 'email'];
         const updates = {};
         allowedUpdates.forEach(field => {
@@ -126,7 +129,7 @@ module.exports.updateUser = async (req, res) => {
 
 module.exports.deleteUser = async (req, res) => {
     try {
-        const {email} = req.body
+        const {email} = req.body//with it admin can delete the user from all the schema
         const userDoc = await user.findOne({ email });
         if (!userDoc) {
             return res.status(404).send('User not found');

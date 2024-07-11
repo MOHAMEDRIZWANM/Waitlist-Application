@@ -8,8 +8,8 @@ dotenv.config({
 })
 
 module.exports.adminlogin = async (req,res) => {
-    try {
-        const { email, password } = req.body;
+    try { //general login process with jwt token generation and storing it in the cookie for 1 day
+        const { email, password } = req.body; 
         const admindoc = await admin.findOne({ username: email });
         if (!admindoc) {
             return res.status(401).send("Invalid admin email");

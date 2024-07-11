@@ -1,7 +1,7 @@
 const {user} = require('../models/user')
 
 module.exports.getDetails = async (req, res) => {
-    try {
+    try { //fetch the user details like name, email and referral code
         const userDoc = await user.findOne({email: req.user.email})
         if(!user) {
             res.send('Error fetching user')

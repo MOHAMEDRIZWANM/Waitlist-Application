@@ -3,7 +3,7 @@ const {otp} = require('../models/otp')
 const {mailer} = require('./mailer')
 
 module.exports.passOtp = async (req, res) => {
-    try {
+    try { //sending OTP for the verifying the user for password updation
         const email = req.body.email
         const u = await user.findOne({email})
         if(u) {
@@ -29,7 +29,7 @@ module.exports.passOtp = async (req, res) => {
 }
 
 module.exports.verifyResPass = async (req, res) => {
-    try {
+    try { //verifying the user with the otp
         const inputOtp = req.body.otp;
         const { email } = req.cookies;
         const otpRecord = await otp.findOne({ email, otp: inputOtp });
@@ -50,7 +50,7 @@ module.exports.verifyResPass = async (req, res) => {
 }
 
 module.exports.resetPass = async(req, res) => {
-    try {
+    try { //function which resets the password of the user after password verification
         const newPassword = req.body.password;
         const { email } = req.cookies
         const u = await user.findOne({ email });

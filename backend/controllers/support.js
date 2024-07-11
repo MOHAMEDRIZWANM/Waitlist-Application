@@ -6,7 +6,7 @@ dotenv.config({
 })
 
 module.exports.supportTicket = async(req, res) => {
-    try {
+    try { //function for raising the support ticket through mail 
         const { name, email, sub, txt } = req.body
         const htm = `<p>${txt}</p>`
         var transport = nodemailer.createTransport({

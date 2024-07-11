@@ -2,7 +2,7 @@ const {otp} = require('../models/otp')
 const { mailer } = require('./mailer')
 
 module.exports.sendOTP = async (email) => {
-    try { 
+    try { //function generating OTP randomly for the user verification
         const otpval = Math.floor(100000 + Math.random() * 900000)
         const newotp = new otp({
             email,
