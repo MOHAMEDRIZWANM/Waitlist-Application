@@ -22,6 +22,10 @@ const waitlistSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
+    // count: {
+    //     type: Number,
+    //     default: 0
+    // }
 });
 
 waitlistSchema.statics.assignPosition = async function(userId) {
@@ -68,6 +72,10 @@ waitlistSchema.statics.updatePositions = async function(referrerId) {
         const userDoc = await user.findById(userReachedPositionOne.user);
         userDoc.winner = true;
         await userDoc.save();
+        // waitlistDoc.count += 1
+        // if(waitlistDoc.count == 5) {
+        //     waitlistDoc.contestCompleted = true;
+        // }
         waitlistDoc.contestCompleted = true;
         await couponMail(email, name);
         console.log(`User reached position 1: ${email}`);
